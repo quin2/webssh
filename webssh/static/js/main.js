@@ -5,7 +5,9 @@ var wssh = {};
 
 
 (function() {
+  //connect("users.isi.deterlab.net", 22, "quin2", "Vobsum-8cuqxa-jypsof", undefined, undefined, undefined)
   // For FormData without getter and setter
+  
   var proto = FormData.prototype,
       data = {};
 
@@ -465,7 +467,7 @@ jQuery(function($){
 
     sock.onopen = function() {
       term.open(terminal);
-      toggle_fullscreen(term);
+      //toggle_fullscreen(term);
       update_font_family(term);
       term.focus();
       state = CONNECTED;
@@ -760,8 +762,12 @@ jQuery(function($){
     decode_uri(window.location.search.substring(1)) + '&' + decode_uri(window.location.hash.substring(1)),
     url_form_data, url_opts_data
   );
+
   console.log(url_form_data);
   console.log(url_opts_data);
+
+  console.log("logging in")
+  connect("users.isi.deterlab.net", 22, "quin2", "Vobsum-8cuqxa-jypsof", undefined, undefined, undefined)
 
   if (url_form_data.hostname && url_form_data.username) {
     connect(url_form_data);

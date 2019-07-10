@@ -13,8 +13,9 @@
         margin-bottom: 10px;
       }
 
-      .container {
+      .container2 {
         margin-top: 20px;
+        width: 50%;
       }
 
       .btn {
@@ -49,24 +50,6 @@
             <input class="form-control" type="password" name="password" value="">
           </div>
         </div>
-        <div class="row">
-          <div class="col">
-            <label for="Username">Private Key</label>
-            <input class="form-control" type="file" id="privatekey" name="privatekey" value="">
-          </div>
-          <div class="col">
-            <label for="Passphrase">Passphrase</label>
-            <input class="form-control" type="password" name="passphrase" value="">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <label for="totp">Totp (time-based one-time password)</label>
-            <input class="form-control" type="password" name="totp" value="">
-          </div>
-          <div class="col">
-          </div>
-        </div>
         {% module xsrf_form_html() %}
         <button type="submit" class="btn btn-primary">Connect</button>
         <button type="reset" class="btn btn-danger">Reset</button>
@@ -74,7 +57,7 @@
 
     </div>
 
-    <div class="container">
+    <div class="container2">
       <div id="status" style="color: red;"></div>
       <div id="terminal"></div>
     </div>
