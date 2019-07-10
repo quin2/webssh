@@ -133,7 +133,7 @@ jQuery(function($){
 
 
   function get_cell_size(term) {
-    style.width = term._core.renderer.dimensions.actualCellWidth;
+    style.width = term._core.renderer.dimensions.actualCellWidth; //causing bug here 
     style.height = term._core.renderer.dimensions.actualCellHeight;
   }
 
@@ -218,7 +218,7 @@ jQuery(function($){
     }
   }
 
-
+  //important! fix this for resized window!
   function format_geometry(cols, rows) {
     return JSON.stringify({'cols': cols, 'rows': rows});
   }
@@ -452,10 +452,10 @@ jQuery(function($){
       reset_font_family(term);
     };
 
-    term.on_resize = function(cols, rows) {
+    term.on_resize = function(cols, rows) { //fix this!!!
       if (cols !== this.cols || rows !== this.rows) {
         console.log('Resizing terminal to geometry: ' + format_geometry(cols, rows));
-        this.resize(cols, rows);
+        //this.resize(cols, rows);
         sock.send(JSON.stringify({'resize': [cols, rows]}));
       }
     };
@@ -467,7 +467,7 @@ jQuery(function($){
 
     sock.onopen = function() {
       term.open(terminal);
-      //toggle_fullscreen(term);
+      term.fit();
       update_font_family(term);
       term.focus();
       state = CONNECTED;
@@ -740,7 +740,7 @@ jQuery(function($){
   window.addEventListener('message', cross_origin_connect, false);
 
   if (window.Terminal.applyAddon) {
-    window.Terminal.applyAddon(window.fullscreen);
+    window.Terminal.applyAddon(fit);
   }
 
   if (document.fonts) {
