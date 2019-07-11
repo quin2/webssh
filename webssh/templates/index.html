@@ -8,45 +8,27 @@
     <link href="static/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="static/css/xterm.min.css" rel="stylesheet" type="text/css" />
     <link href="static/css/fullscreen.min.css" rel="stylesheet" type="text/css" />
-    <style>
-    html, body{
-      height: 100%;
-      overflow:hidden;
-    }
-    .row2 {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    }
-    .cont {
-    height: 100%;
-    width: 100%;
-    }
-    #terminal{
-      height:98vh;
-      padding: 1vh;
-    }
-    #termSide{
-      background-color: black;
-    }
-    .col2{
-      height: 100%;
-      width: 50%;
-      flex: 1;
-    }
-    </style>
+    <link href="static/css/book.css" rel="stylesheet" type="text/css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="cont">
         <div class="row2">
             <div class="col2">
-                <h1>test</h1>
+                <div id="bookSide">
+                    <div id="textContain">
+                    </div>
+                    <button type="button" id="bPrev" class="btn btn-outline-primary"></button>
+                    <button type="button" id="bNext" class="btn btn-outline-primary"></button>
+                </div>
             </div>
             <div class="col2">
-                    
-                <div id= "termSide" class="cont">
-                  <form id="connect" action="" method="post" enctype="multipart/form-data" {% if debug %} novalidate{% end %}>
+                <div id="termSide" class="cont">
+                    <form id="connect" action="" method="post" enctype="multipart/form-data" {% if debug %} novalidate{% end %}>
+                        <!--could add form back in for future, but students should do stuff the hard way!-->
+                        <!--figure out how to integrate server ip into code/url?-->
                         {% module xsrf_form_html() %}
                     </form>
                     <div id="status" style="color: red;"></div>
@@ -62,6 +44,7 @@
     <script src="static/js/fullscreen.min.js"></script>
     <script src="static/js/fit.min.js"></script>
     <script src="static/js/main.js"></script>
+    <script src="static/js/bookReader.js"></script>
 </body>
 
 </html>

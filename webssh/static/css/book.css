@@ -1,0 +1,60 @@
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.row2 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.cont {
+    height: 100%;
+    width: 100%;
+}
+
+#terminal {
+    height: 98vh;
+    padding: 1vh;
+}
+
+#termSide {
+    background-color: black;
+}
+
+#bookSide {
+    padding: 4vh;
+    background-color: #FFFAFA
+}
+
+#textContain {
+    max-width: 600px;
+    margin: auto;
+}
+
+.col2 {
+    height: 100vh;
+    width: 50vh;
+    flex: 1;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+}
+
+p {
+    font-size: 16px;
+    line-height: 26px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+
+    font-family: 'Merriweather', serif;
+}
+
+#bNext {
+    float: right;
+}
