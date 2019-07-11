@@ -767,7 +767,7 @@ jQuery(function($){
   console.log(url_opts_data);
 
   console.log("logging in")
-  connect("users.isi.deterlab.net", 22, "quin2", "Vobsum-8cuqxa-jypsof", undefined, undefined, undefined)
+  connect("users.isi.deterlab.net", 22, "quin2", "XXXXXXXXX", undefined, undefined, undefined)
 
   if (url_form_data.hostname && url_form_data.username) {
     connect(url_form_data);

@@ -1,3 +1,12 @@
+## WebSSH for EDURange (or EDUBook)
+
+currently only implements SSH Inception
+
+To change access credentials for SSH, go to line 770 in main.js and alter them. Designed to be 'idiot proof' right now
+and hide the cushy web interface for students. It's only built for one user now though (me)
+
+Chef recipie for EDURange deployment is located in eduBook.rb.  Installs everything that EDUBook needs to run on a ubuntu VPC, and starts the service! The shell part works fine on VPS boxes, I haven't tested the ruby wrapper yet.
+
 ## WebSSH
 
 [![Build Status](https://travis-ci.org/huashengdun/webssh.svg?branch=master)](https://travis-ci.org/huashengdun/webssh)
@@ -39,36 +48,6 @@ A simple web application to be used as an ssh client to connect to your ssh serv
 
 * Python 2.7/3.4+
 
-
-### Quickstart
-
-1. Install this app, run command `pip install webssh`
-2. Start a webserver, run command `wssh`
-3. Open your browser, navigate to `127.0.0.1:8888`
-4. Input your data, submit the form.
-
-
-### Server options
-
-```bash
-# start a http server with specified listen address and listen port
-wssh --address='2.2.2.2' --port=8000
-
-# start a https server, certfile and keyfile must be passed
-wssh --certfile='/path/to/cert.crt' --keyfile='/path/to/cert.key'
-
-# missing host key policy
-wssh --policy=reject
-
-# logging level
-wssh --logging=debug
-
-# log to file
-wssh --log-file-prefix=main.log
-
-# more options
-wssh --help
-```
 
 ### Browser console
 
