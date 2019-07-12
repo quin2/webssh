@@ -22,6 +22,7 @@ body {
 
 #termSide {
     background-color: black;
+    
 }
 
 #bookSide {
@@ -57,4 +58,22 @@ p {
 
 #bNext {
     float: right;
+}
+
+#controlBox{
+    width: 50%;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#connect {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+label{
+    color: #FFFAFA;
 }

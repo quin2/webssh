@@ -676,6 +676,7 @@ jQuery(function($){
 
     if (state !== DISCONNECTED) {
       console.log(messages[state]);
+      document.getElementById('connect').hidden = true
       return;
     }
 
@@ -696,7 +697,7 @@ jQuery(function($){
         opts = hostname;
       }
 
-      result = connect_with_options(opts);
+      result = connect_with_options(opts); //calls this 
     }
 
     if (result) {
@@ -709,7 +710,7 @@ jQuery(function($){
 
   $(form_id).submit(function(event){
     event.preventDefault();
-    connect();
+    connect(); //connect called here 
   });
 
 
@@ -766,8 +767,10 @@ jQuery(function($){
   console.log(url_form_data);
   console.log(url_opts_data);
 
+  /*
   console.log("logging in")
   connect("users.isi.deterlab.net", 22, "quin2", "XXXXXXXXX", undefined, undefined, undefined)
+  */
 
   if (url_form_data.hostname && url_form_data.username) {
     connect(url_form_data);
