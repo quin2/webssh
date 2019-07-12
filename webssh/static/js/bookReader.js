@@ -13,7 +13,7 @@ function loadChapter(){
 	t.innerHTML = manifest.chapters[c].sectionTitle
 	target.appendChild(t)
 
-	fetch('http://0.0.0.0:8888/static/books/ssh_inception/' + manifest.chapters[c].fileName)
+	fetch(window.location.href + 'static/books/ssh_inception/' + manifest.chapters[c].fileName)
 		.then(function(response) {
 			return response.text()
 		})
@@ -43,7 +43,7 @@ function loadChapter(){
 }
 
 window.onload = function(){
-	fetch('http://0.0.0.0:8888/static/books/ssh_inception/manifest.json')
+	fetch(window.location.href + 'static/books/ssh_inception/manifest.json')
 	  .then(function(response) {
 	    return response.json();
 	  })
